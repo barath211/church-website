@@ -24,7 +24,7 @@ function Login() {
       if (loginData.Email == "" || loginData.Password == "") {
         alert("inputs are empty");
       } else {
-        const request = await fetch(`http://localhost:5000/User/LoginAccount`, {
+        const request = await fetch(`https://bethelicrm.onrender.com/User/LoginAccount`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(loginData),
