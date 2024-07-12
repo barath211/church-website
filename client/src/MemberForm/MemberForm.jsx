@@ -41,7 +41,7 @@ function MemberForm() {
     try {
       console.log(formInputs);
       const request = await fetch(
-        `https://bethelicrm.onrender.com/FormRoutes/CreateFamilyMember/${USERID}`,
+        `/server/FormRoutes/CreateFamilyMember/${USERID}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

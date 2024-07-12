@@ -24,7 +24,7 @@ function Login() {
       if (loginData.Email == "" || loginData.Password == "") {
         alert("inputs are empty");
       } else {
-        const request = await fetch(`https://bethelicrm.onrender.com/User/LoginAccount`, {
+        const request = await fetch(`/server/User/LoginAccount`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(loginData),
@@ -35,10 +35,10 @@ function Login() {
           localStorage.setItem("BETHEL_ICRM_TOKEN", response.Token);
           if (member) {
             navigate("/MemberForm");
-            window.location.reload()
+            window.location.reload();
           } else {
             navigate("/");
-            window.location.reload()
+            window.location.reload();
           }
         } else {
           alert(response.message);
@@ -150,8 +150,6 @@ function Login() {
             <p>Login with Google</p>
           </button>
         </div>
-
-        
       </div>
     </div>
   );

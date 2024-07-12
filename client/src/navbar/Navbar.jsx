@@ -44,9 +44,7 @@ const Navbar = () => {
     if (USERID) {
       try {
         const response = await fetch(
-          `https://bethelicrm.onrender.com/User/ViewSingleAccount/${String(
-            USERID?.USERID
-          )}`
+          `/server/User/ViewSingleAccount/${String(USERID?.USERID)}`
         );
         const data = await response.json();
         if (data.success) {
@@ -63,7 +61,7 @@ const Navbar = () => {
   async function fetchClanMembers() {
     try {
       const response = await fetch(
-        `https://bethelicrm.onrender.com/FormRoutes/ReadFamilyMembers/${primaryNumber}`,
+        `/server/FormRoutes/ReadFamilyMembers/${primaryNumber}`,
         { method: "GET" }
       );
       const data = await response.json();
@@ -90,7 +88,7 @@ const Navbar = () => {
 
   return (
     <>
-      {currentAccount?.Email === 'bethelicrmcoimbatore@gmail.com' ? (
+      {currentAccount?.Email === "bethelicrmcoimbatore@gmail.com" ? (
         <Link
           to={"/Admin"}
           className="z-10 absolute bottom-10 left-10 px-3 py-4 rounded-md bg-red-600 text-white"
@@ -332,7 +330,9 @@ const Navbar = () => {
             pattern="[0-9]{10}"
             placeholder="Enter Primary Mobile Number"
           />
-          <button className="" onClick={() => fetchClanMembers()}>Search</button>
+          <button className="" onClick={() => fetchClanMembers()}>
+            Search
+          </button>
         </div>
         <div className="text-[1.2rem] font-[700] mt-5 px-5">Clan Members</div>
         <div className="mt-3 flex flex-col gap-6 h-[300px] Scroll-customize overflow-y-scroll">
