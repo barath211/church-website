@@ -44,7 +44,9 @@ const Navbar = () => {
     if (USERID) {
       try {
         const response = await fetch(
-          `/server/User/ViewSingleAccount/${String(USERID?.USERID)}`
+          `https://bethelicrm.onrender.com/User/ViewSingleAccount/${String(
+            USERID?.USERID
+          )}`
         );
         const data = await response.json();
         if (data.success) {
@@ -61,7 +63,7 @@ const Navbar = () => {
   async function fetchClanMembers() {
     try {
       const response = await fetch(
-        `/server/FormRoutes/ReadFamilyMembers/${primaryNumber}`,
+        `https://bethelicrm.onrender.com/FormRoutes/ReadFamilyMembers/${primaryNumber}`,
         { method: "GET" }
       );
       const data = await response.json();

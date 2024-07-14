@@ -129,11 +129,14 @@ function Admin() {
   const [findUserUI, setFindUserUI] = useState({});
   async function finduserengine() {
     try {
-      const requst = await fetch(`/server/FormRoutes/FindUser`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Find: search }),
-      });
+      const requst = await fetch(
+        `https://bethelicrm.onrender.com/FormRoutes/FindUser`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ Find: search }),
+        }
+      );
       const response = await requst.json();
       if (response.success) {
         console.log(response.user);
@@ -150,7 +153,9 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `/server/User/ViewSingleAccount/${String(AdminVerification?.USERID)}`,
+          `https://bethelicrm.onrender.com/User/ViewSingleAccount/${String(
+            AdminVerification?.USERID
+          )}`,
           { method: "GET" }
         );
         const response = await request.json();
@@ -170,9 +175,12 @@ function Admin() {
     async function AllLogins() {
       try {
         if (AdminVerification === null) return;
-        const request = await fetch(`/server/User/ViewAllAccount`, {
-          method: "GET",
-        });
+        const request = await fetch(
+          `https://bethelicrm.onrender.com/User/ViewAllAccount`,
+          {
+            method: "GET",
+          }
+        );
         const response = await request.json();
         if (response.success) {
           setAllLoginUsers(response.accounts);
@@ -189,9 +197,12 @@ function Admin() {
     async function ChurchMembersAPI() {
       try {
         if (AdminVerification === null) return;
-        const request = await fetch(`/server/FormRoutes/ReadAllFamilyMembers`, {
-          method: "GET",
-        });
+        const request = await fetch(
+          `https://bethelicrm.onrender.com/FormRoutes/ReadAllFamilyMembers`,
+          {
+            method: "GET",
+          }
+        );
         const response = await request.json();
         if (response.success) {
           setChurchMembers(response.allMembers);
@@ -208,9 +219,12 @@ function Admin() {
     async function BaptismAPI() {
       try {
         if (AdminVerification === null) return;
-        const request = await fetch(`/server/FormRoutes/BaptismMembers`, {
-          method: "GET",
-        });
+        const request = await fetch(
+          `https://bethelicrm.onrender.com/FormRoutes/BaptismMembers`,
+          {
+            method: "GET",
+          }
+        );
         const response = await request.json();
         if (response.success) {
           setBaptism(response.members);
@@ -226,9 +240,12 @@ function Admin() {
     async function NonBaptismAPI() {
       try {
         if (AdminVerification === null) return;
-        const request = await fetch(`/server/FormRoutes/NonBaptismMembers`, {
-          method: "GET",
-        });
+        const request = await fetch(
+          `https://bethelicrm.onrender.com/FormRoutes/NonBaptismMembers`,
+          {
+            method: "GET",
+          }
+        );
         const response = await request.json();
         if (response.success) {
           setNonBaptism(response.members);

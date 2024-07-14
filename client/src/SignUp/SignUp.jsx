@@ -25,11 +25,14 @@ function SignUp() {
     )
       return alert(" Fill the input first! ");
     try {
-      const request = await fetch(`/server/User/AccountCreate`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(signUpDetail),
-      });
+      const request = await fetch(
+        `https://bethelicrm.onrender.com/User/AccountCreate`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(signUpDetail),
+        }
+      );
       const response = await request.json();
       if (response.success) {
         alert("Account Created ✅");

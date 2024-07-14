@@ -24,11 +24,14 @@ function Login() {
       if (loginData.Email == "" || loginData.Password == "") {
         alert("inputs are empty");
       } else {
-        const request = await fetch(`/server/User/LoginAccount`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(loginData),
-        });
+        const request = await fetch(
+          `https://bethelicrm.onrender.com/User/LoginAccount`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(loginData),
+          }
+        );
         const response = await request.json();
         console.log(response);
         if (response.success) {
