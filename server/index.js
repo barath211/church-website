@@ -1,12 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import ENV from "dotenv";
+import dotenv from "dotenv";
 import { AccountRouter } from "./View/AccountRoute.js";
 import { FormRoutes } from "./View/FormRoute.js";
 import path from "path";
 
-ENV.config();
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -20,19 +20,21 @@ const MONGO_URL = process.env.MONGO_URL;
 
 const __dirname = path.resolve();
 
-// Serve static files from the 'client/dist' directory
-app.use(express.static(path.join(__dirname, "/client/dist")));
+// Serve static files from the 'build' directory
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 // Serve the 'index.html' file for all routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 mongoose
-  .connect(MONGO_URL)
+  .connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(PORT, () => {
-      console.log("server is running");
+      console.log(`Server is running on port ${PORT}`);
     });
   })
-  .catch((err) => console.log(err.message));
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err.message);
+  });
