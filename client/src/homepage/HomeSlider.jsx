@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import bg3 from '../images/bg-about.jpg'
+import bg5 from '../images/BG-5.jpg'
+import bg2 from '../images/BG-2.jpg'
+import bg4 from '../images/imgpasma.jpg'
 
 const slides = [
-  { src: "https://a-static.besthdwallpaper.com/dragon-epic-battle-wallpaper-3554x1999-82405_53.jpg", alt: "Image One" },
-  { src: "https://images5.alphacoders.com/865/865199.jpg", alt: "Image Two" },
-  { src: "https://c4.wallpaperflare.com/wallpaper/540/4/24/the-storm-water-rocks-lightning-wallpaper-preview.jpg", alt: "Image Three" },
-  { src: "https://a-static.besthdwallpaper.com/fantasy-epic-battle-against-dragon-wallpaper-1920x1080-82470_48.jpg", alt: "Image Four" },
-  { src: "https://images5.alphacoders.com/296/296477.gif", alt: "Image Five" }
+  { src: bg3, alt: "Image One" },
+  { src: bg2, alt: "Image Two" },
+  { src: bg5, alt: "Image Three" },
+  { src: bg4, alt: "Image Four" },
+ 
 ];
 
 function HomeSlider() {

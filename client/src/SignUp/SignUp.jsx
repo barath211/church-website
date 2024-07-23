@@ -47,7 +47,7 @@ function SignUp() {
   }
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center mb-4">
       <div className="w-fit mx-auto max-w-md rounded-md sm:p-8 dark:bg-gray-50 dark:text-gray-800">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Create your Account
@@ -126,13 +126,13 @@ function SignUp() {
           </button>
         </form>
 
-        <div className="flex items-center w-full my-4">
+        <div className="flex items-center w-full my-4 ">
           <hr className="w-full dark:text-gray-600" />
           <p className="px-3 dark:text-gray-600">OR</p>
           <hr className="w-full dark:text-gray-600" />
         </div>
 
-        <p className="text-sm text-center dark:text-gray-600">
+        <p className="text-sm text-center dark:text-gray-600 ">
           Already have an account
           <Link
             to="/Login"

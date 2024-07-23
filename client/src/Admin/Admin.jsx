@@ -304,14 +304,7 @@ function Admin() {
                   >
                     Find User
                   </button>
-                  <button
-                    className={`block w-full text-left px-4 py-2 rounded ${
-                      selected === "contact" ? "bg-gray-700" : ""
-                    }`}
-                    onClick={() => setSelected("contact")}
-                  >
-                    Contact
-                  </button>
+                  
                 </nav>
               </div>
 
@@ -592,7 +585,7 @@ function Admin() {
                     </div>
                   </div>
                 )}
-                {selected === "contact" && <div>Contact Content</div>}
+                {/* {selected === "contact" && <div>Contact Content</div>} */}
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import mssgImg from "../images/mssg image.jpg";
+import mssgImg from "../images/youths...jpg";
 
 const Section5 = () => {
   return (

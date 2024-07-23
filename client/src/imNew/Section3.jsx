@@ -1,5 +1,5 @@
 import React from 'react';
-import churchimg from '../images/churchimg2.jpg';
+import churchimg from '../images/pastorimnew.jpg';
 
  
 

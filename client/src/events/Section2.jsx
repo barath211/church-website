@@ -7,16 +7,17 @@ const Section2 = () => {
 		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
 			<h1 className="text-5xl font-bold leading-none sm:text-6xl">events
 			</h1>
-			<p className="mt-6 mb-8 text-lg sm:mb-12">Dictum aliquam porta in condimentum ac integer
-				<br  className="hidden md:inline lg:hidden" />turpis pulvinar, est scelerisque ligula sem
+			<p className="mt-6 mb-8 text-lg sm:mb-12">
+			Join us for a range of enriching church events including special prayers for collective and personal needs,
+			 vibrant youth meetings fostering spiritual growth, and dynamic Sunday worship services. Women’s prayer meetings offer a supportive space for encouragement and intercessory prayer. Celebrate the birth of our Savior at our joyous Christmas celebration with festive music and a special message. Enjoy diverse cultural events that showcase our community’s
+			 talents through music, dance, and culinary delights, strengthening our bonds and celebrating our heritage.
 			</p>
-			<div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-				<a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold rounded dark:bg-teal-600 dark:text-gray-50">Suspendisse</a>
-				<a rel="noopener noreferrer" href="#" className="px-8 py-3  text-lg font-semibold border rounded dark:border-gray-800">Malesuada</a>
-			</div>
+			
 		</div>
-		<div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+		<div className="flex flex-col items-center justify-center p-6 mt-8 mb-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
 			<img src={pasMaImage} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 mb-2" />
+			<h1 className='font-bold text-xl '> Meet our Event Co-ordinator </h1>
+			<p className='font-bold text-2xl text-red-600'> <span className='font-bold text-2xl text-red-600'>Mrs. Mercy Daniel</span></p>
 		</div>
 	</div>
 </section>

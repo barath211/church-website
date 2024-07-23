@@ -31,8 +31,9 @@ const Navbar = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  const toggleDoubleDropdown = () => {
-    setDoubleDropdownOpen(!isDoubleDropdownOpen);
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+    setMobileMenuOpen(false); // Close the mobile menu when closing the dropdown
   };
 
   const [currentAccount, setCurrentAccount] = useState({});
@@ -152,6 +153,7 @@ const Navbar = () => {
                   aria-current="page"
                   onMouseEnter={() => setHoveredItem("imNew")}
                   onMouseLeave={() => setHoveredItem(null)}
+                  onClick={toggleMobileMenu}
                 >
                   Im New
                 </Link>
@@ -166,9 +168,7 @@ const Navbar = () => {
                   onMouseEnter={() => setHoveredItem("Ministries")}
                   onMouseLeave={() => setHoveredItem(null)}
                 >
-                  <Link to={"Ministries"}>
-                    <span>Ministries </span>
-                  </Link>
+                  <span>Ministries </span>
                   <svg
                     className="w-2.5 h-2.5 ms-2.5"
                     aria-hidden="true"
@@ -191,7 +191,7 @@ const Navbar = () => {
                     isDropdownOpen
                       ? "block absolute top-[50px] md:w-[200px] md:text-center w-full"
                       : "hidden"
-                  } font-normal bg-gray-500 divide-y  divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                  } font-normal bg-gray-500 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
                 >
                   <ul
                     className="mt-5 text-sm pb-5 text-gray-700 dark:text-gray-200"
@@ -201,6 +201,7 @@ const Navbar = () => {
                       <Link
                         to={"Childrenministry"}
                         className="block px-4 py-2 text-gray-200"
+                        onClick={closeDropdown}
                       >
                         Children's
                       </Link>
@@ -209,6 +210,7 @@ const Navbar = () => {
                       <Link
                         to={"Youthministry"}
                         className="block px-4 py-2 text-gray-200"
+                        onClick={closeDropdown}
                       >
                         Youth
                       </Link>
@@ -217,6 +219,7 @@ const Navbar = () => {
                       <Link
                         to={"Womenministry"}
                         className="block px-4 py-2 text-gray-200"
+                        onClick={closeDropdown}
                       >
                         Women's
                       </Link>
@@ -225,6 +228,7 @@ const Navbar = () => {
                       <Link
                         to={"Worship"}
                         className="block px-4 py-2 text-gray-200"
+                        onClick={closeDropdown}
                       >
                         Worship
                       </Link>
@@ -234,6 +238,7 @@ const Navbar = () => {
                       <Link
                         to={"Socialservice"}
                         className="block px-4 py-2 text-gray-200"
+                        onClick={closeDropdown}
                       >
                         Social service
                       </Link>
@@ -249,6 +254,7 @@ const Navbar = () => {
                   }`}
                   onMouseEnter={() => setHoveredItem("Events")}
                   onMouseLeave={() => setHoveredItem(null)}
+                  onClick={toggleMobileMenu}
                 >
                   Events
                 </Link>
@@ -261,6 +267,7 @@ const Navbar = () => {
                   }`}
                   onMouseEnter={() => setHoveredItem("aboutUs")}
                   onMouseLeave={() => setHoveredItem(null)}
+                  onClick={toggleMobileMenu}
                 >
                   About
                 </Link>
@@ -273,6 +280,7 @@ const Navbar = () => {
                   }`}
                   onMouseEnter={() => setHoveredItem("contribute")}
                   onMouseLeave={() => setHoveredItem(null)}
+                  onClick={toggleMobileMenu}
                 >
                   Contribute
                 </Link>
@@ -288,7 +296,8 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={`/${loginButtonText}`}
-                    className=" block px-3 text-[14px] py-1 rounded-md bg-red-600 text-white"
+                    className="block px-3 text-[14px] py-1 rounded-md bg-red-600 text-white"
+                    onClick={toggleMobileMenu}
                   >
                     {loginButtonText}
                   </Link>

@@ -23,7 +23,7 @@ const Section2 = () => {
             </p>
 		</div>
 	</article>
-	<div>
+	{/* <div>
 		<div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
 			<a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-teal-600 dark:text-gray-50">#MambaUI</a>
 			<a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-teal-600 dark:text-gray-50">#TailwindCSS</a>
@@ -43,7 +43,7 @@ const Section2 = () => {
 				</li>
 			</ul>
 		</div>
-	</div>
+	</div> */}
 </div>
   )
 }
