@@ -1,8 +1,11 @@
 import React from 'react'
+import Bg1 from './Bg1'
 
 const Womenministry = () => {
   return (
-    <div>Womenministry</div>
+    <>
+    <Bg1/>
+</>
   )
 }
 

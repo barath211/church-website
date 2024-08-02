@@ -1,8 +1,11 @@
 import React from 'react'
+import Bg1 from './Bg1'
 
 const Socialservice = () => {
   return (
-    <div>Socialservice</div>
+    <>
+    <Bg1/>
+    </>
   )
 }
 

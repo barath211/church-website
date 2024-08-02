@@ -129,14 +129,11 @@ function Admin() {
   const [findUserUI, setFindUserUI] = useState({});
   async function finduserengine() {
     try {
-      const requst = await fetch(
-        `https://bethelicrm.onrender.com/FormRoutes/FindUser`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ Find: search }),
-        }
-      );
+      const requst = await fetch(`http://localhost:3000/FormRoutes/FindUser`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ Find: search }),
+      });
       const response = await requst.json();
       if (response.success) {
         console.log(response.user);
@@ -153,7 +150,7 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `https://bethelicrm.onrender.com/User/ViewSingleAccount/${String(
+          `http://bethelicrm.hostinger.com/ViewSingleAccount/${String(
             AdminVerification?.USERID
           )}`,
           { method: "GET" }
@@ -176,7 +173,7 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `https://bethelicrm.onrender.com/User/ViewAllAccount`,
+          `http://bethelicrm.hostinger.com/ViewAllAccount`,
           {
             method: "GET",
           }
@@ -198,7 +195,7 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `https://bethelicrm.onrender.com/FormRoutes/ReadAllFamilyMembers`,
+          `http://localhost:3000/FormRoutes/ReadAllFamilyMembers`,
           {
             method: "GET",
           }
@@ -220,7 +217,7 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `https://bethelicrm.onrender.com/FormRoutes/BaptismMembers`,
+          `http://localhost:3000/FormRoutes/BaptismMembers`,
           {
             method: "GET",
           }
@@ -241,7 +238,7 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `https://bethelicrm.onrender.com/FormRoutes/NonBaptismMembers`,
+          `http://localhost:3000/FormRoutes/NonBaptismMembers`,
           {
             method: "GET",
           }
@@ -304,7 +301,6 @@ function Admin() {
                   >
                     Find User
                   </button>
-                  
                 </nav>
               </div>
 

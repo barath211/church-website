@@ -26,7 +26,7 @@ function SignUp() {
       return alert(" Fill the input first! ");
     try {
       const request = await fetch(
-        `https://bethelicrm.onrender.com/User/AccountCreate`,
+        `http://bethelicrm.hostinger.com/AccountCreate`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

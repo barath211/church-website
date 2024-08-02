@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import churchlogo from "../images/church logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -13,6 +13,7 @@ const Navbar = () => {
   const [clanMembers, setClanMembers] = useState([]);
   const [primaryNumber, setPrimaryNumber] = useState(0);
   const [hoveredItem, setHoveredItem] = useState(null); // State to track hovered item
+  const dropdownRef = useRef(null); // Ref for the dropdown menu
 
   useEffect(() => {
     const currentPath = location.pathname;
@@ -36,6 +37,20 @@ const Navbar = () => {
     setMobileMenuOpen(false); // Close the mobile menu when closing the dropdown
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const [currentAccount, setCurrentAccount] = useState({});
   const USERID = localStorage.getItem("BETHEL_ICRM_TOKEN")
     ? JSON.parse(atob(localStorage.getItem("BETHEL_ICRM_TOKEN").split(".")[1]))
@@ -45,7 +60,7 @@ const Navbar = () => {
     if (USERID) {
       try {
         const response = await fetch(
-          `https://bethelicrm.onrender.com/User/ViewSingleAccount/${String(
+          `http://bethelicrm.hostinger.com/ViewSingleAccount/${String(
             USERID?.USERID
           )}`
         );
@@ -64,7 +79,7 @@ const Navbar = () => {
   async function fetchClanMembers() {
     try {
       const response = await fetch(
-        `https://bethelicrm.onrender.com/FormRoutes/ReadFamilyMembers/${primaryNumber}`,
+        `http://localhost:3000/FormRoutes/ReadFamilyMembers/${primaryNumber}`,
         { method: "GET" }
       );
       const data = await response.json();
@@ -153,12 +168,15 @@ const Navbar = () => {
                   aria-current="page"
                   onMouseEnter={() => setHoveredItem("imNew")}
                   onMouseLeave={() => setHoveredItem(null)}
-                  onClick={toggleMobileMenu}
+                  onClick={() => {
+                    toggleMobileMenu();
+                    closeDropdown(); // Close the dropdown menu
+                  }}
                 >
                   Im New
                 </Link>
               </li>
-              <li className="relative">
+              <li className="relative" ref={dropdownRef}>
                 <button
                   id="dropdownNavbarLink"
                   onClick={toggleDropdown}
@@ -191,7 +209,7 @@ const Navbar = () => {
                     isDropdownOpen
                       ? "block absolute top-[50px] md:w-[200px] md:text-center w-full"
                       : "hidden"
-                  } font-normal bg-gray-500 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                  } font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 text-black dark:text-white`}
                 >
                   <ul
                     className="mt-5 text-sm pb-5 text-gray-700 dark:text-gray-200"
@@ -200,7 +218,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={"Childrenministry"}
-                        className="block px-4 py-2 text-gray-200"
+                        className="block px-4 py-2 text-orange-500 font-bold"
                         onClick={closeDropdown}
                       >
                         Children's
@@ -209,7 +227,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={"Youthministry"}
-                        className="block px-4 py-2 text-gray-200"
+                        className="block px-4 py-2 text-orange-500 font-bold"
                         onClick={closeDropdown}
                       >
                         Youth
@@ -218,29 +236,28 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={"Womenministry"}
-                        className="block px-4 py-2 text-gray-200"
+                        className="block px-4 py-2 text-orange-500 font-bold"
                         onClick={closeDropdown}
                       >
-                        Womens
+                        Women's
                       </Link>
                     </li>
                     <li>
                       <Link
                         to={"Worship"}
-                        className="block px-4 py-2 text-gray-200"
+                        className="block px-4 py-2 text-orange-500 font-bold"
                         onClick={closeDropdown}
                       >
                         Worship
                       </Link>
                     </li>
-
                     <li>
                       <Link
-                        to={"Socialservice"}
-                        className="block px-4 py-2 text-gray-200"
+                        to={"Familes"}
+                        className="block px-4 py-2 text-orange-500 font-bold"
                         onClick={closeDropdown}
                       >
-                        Social service
+                        Families
                       </Link>
                     </li>
                   </ul>
@@ -254,7 +271,10 @@ const Navbar = () => {
                   }`}
                   onMouseEnter={() => setHoveredItem("Events")}
                   onMouseLeave={() => setHoveredItem(null)}
-                  onClick={toggleMobileMenu}
+                  onClick={() => {
+                    toggleMobileMenu();
+                    closeDropdown(); // Close the dropdown menu
+                  }}
                 >
                   Events
                 </Link>
@@ -267,7 +287,10 @@ const Navbar = () => {
                   }`}
                   onMouseEnter={() => setHoveredItem("aboutUs")}
                   onMouseLeave={() => setHoveredItem(null)}
-                  onClick={toggleMobileMenu}
+                  onClick={() => {
+                    toggleMobileMenu();
+                    closeDropdown(); // Close the dropdown menu
+                  }}
                 >
                   About
                 </Link>
@@ -280,7 +303,10 @@ const Navbar = () => {
                   }`}
                   onMouseEnter={() => setHoveredItem("contribute")}
                   onMouseLeave={() => setHoveredItem(null)}
-                  onClick={toggleMobileMenu}
+                  onClick={() => {
+                    toggleMobileMenu();
+                    closeDropdown(); // Close the dropdown menu
+                  }}
                 >
                   Contribute
                 </Link>
@@ -297,7 +323,10 @@ const Navbar = () => {
                   <Link
                     to={`/${loginButtonText}`}
                     className="block px-3 text-[14px] py-1 rounded-md bg-red-600 text-white"
-                    onClick={toggleMobileMenu}
+                    onClick={() => {
+                      toggleMobileMenu();
+                      closeDropdown(); // Close the dropdown menu
+                    }}
                   >
                     {loginButtonText}
                   </Link>
