@@ -24,7 +24,8 @@ function Login() {
         alert("Inputs are empty");
       } else {
         const request = await fetch(
-          `http://bethelicrm.hostinger.com/LoginAccount`,
+          `https://bethelicrm.hostinger.com
+/LoginAccount`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

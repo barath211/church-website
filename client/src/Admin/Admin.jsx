@@ -150,9 +150,8 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `http://bethelicrm.hostinger.com/ViewSingleAccount/${String(
-            AdminVerification?.USERID
-          )}`,
+          `https://bethelicrm.hostinger.com
+/ViewSingleAccount/${String(AdminVerification?.USERID)}`,
           { method: "GET" }
         );
         const response = await request.json();
@@ -173,7 +172,8 @@ function Admin() {
       try {
         if (AdminVerification === null) return;
         const request = await fetch(
-          `http://bethelicrm.hostinger.com/ViewAllAccount`,
+          `https://bethelicrm.hostinger.com
+/ViewAllAccount`,
           {
             method: "GET",
           }

@@ -1,5 +1,5 @@
 import React from 'react';
-import clock from '../images/church_clock_2-removebg-preview.png';
+
 
 const Section2 = () => {
   return (
