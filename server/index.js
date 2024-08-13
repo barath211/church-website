@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import { AccountRouter } from "./View/AccountRoute.js";
 import { FormRoutes } from "./View/FormRoute.js";
 import path from "path";
+import https from 'https';
+import fs from 'fs';
 
 dotenv.config();
 
@@ -12,6 +14,7 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "30mb" }));
 app.use(express.urlencoded({ extended: true }));
+
 app.use("/User", AccountRouter);
 app.use("/FormRoutes", FormRoutes);
 
@@ -28,13 +31,26 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-mongoose
-  .connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+const startServer = async () => {
+  try {
+    await mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log("Connected to MongoDB");
+
+    const httpServer = app.listen(PORT, () => {
+      console.log(`HTTP server is running on port ${PORT}`);
     });
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err.message);
-  });
+
+    const httpsOptions = {
+      key: fs.readFileSync('/etc/letsencrypt/live/bethelicrmcoimbatore.in/privkey.pem'),
+      cert: fs.readFileSync('/etc/letsencrypt/live/bethelicrmcoimbatore.in/fullchain.pem')
+    };
+
+    https.createServer(httpsOptions, app).listen(443, () => {
+      console.log('HTTPS server is running on https://bethelicrmcoimbatore.in');
+    });
+  } catch (err) {
+    console.error("Error starting server:", err.message);
+  }
+};
+
+startServer();
