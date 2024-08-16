@@ -1,11 +1,11 @@
 import React from 'react'
-import bgImage from '../images/childrens.jpg'
+
 
 
 
 const Bg1 = () => {
   return (
-    <div className="flex flex-col my-6 shadow-lg fade-in card w-full md:max-w-full">
+    <div className="flex flex-col my-6 shadow-lg  card w-full md:max-w-full">
       <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
         <div className="flex items-center justify-center px-6 py-1 text-xl md:text-3xl text-red-600 font-bold italic text-center dark:text-gray-800">
           <svg
