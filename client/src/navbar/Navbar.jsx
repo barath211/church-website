@@ -257,11 +257,11 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to={'Familes'}
+                        to={'Socialservice'}
                         className='block px-4 py-2 text-orange-500 font-bold'
                         onClick={closeDropdown}
                       >
-                        Families
+                        Social Service
                       </Link>
                     </li>
                   </ul>
