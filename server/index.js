@@ -34,23 +34,8 @@ app.get('*', (req, res) => {
 
 const startServer = async () => {
   try {
-    await mongoose.connect(MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(MONGO_URL);
     console.log('Connected to MongoDB');
-
-    // Create HTTP server
-    http
-      .createServer((req, res) => {
-        res.writeHead(301, {
-          Location: 'https://' + req.headers['host'] + req.url,
-        });
-        res.end();
-      })
-      .listen(80, () => {
-        console.log('HTTP server running on port 80 (redirecting to HTTPS)');
-      });
 
     // Create HTTPS server
     const httpsOptions = {
@@ -65,6 +50,20 @@ const startServer = async () => {
     https.createServer(httpsOptions, app).listen(443, () => {
       console.log('HTTPS server running on https://bethelicrmcoimbatore.in');
     });
+
+    // Create HTTP server that redirects to HTTPS
+    http
+      .createServer((req, res) => {
+        res.writeHead(301, {
+          Location: 'https://' + req.headers['host'] + req.url,
+        });
+        res.end();
+      })
+      .listen(PORT, () => {
+        console.log(
+          `HTTP server running on port ${PORT} (redirecting to HTTPS)`,
+        );
+      });
   } catch (err) {
     console.error('Error starting server:', err.message);
   }
