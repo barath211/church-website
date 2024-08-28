@@ -7,10 +7,11 @@ import praveen from '../images/praveen.png';
 
 const Section4 = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-200 via-yellow-100 to-gray-300 w-full h-full">
+    <div className="bg-gray-200">
+
       <div>
-        <h1 className="text-3xl text-gray-800 font-bold pt-8 text-center mb-10">
-          Meet Our Pastor's
+        <h1 className="text-3xl text-red-600 font-bold pt-8 text-center mb-10">
+          Meet Our Pastors
         </h1>
       </div>
 
@@ -38,7 +39,7 @@ const Section4 = () => {
 
       {/* Assistant Pastors */}
       <div className="mb-5">
-        <h1 className="text-3xl text-gray-800 font-bold pt-8 text-center">Assistant Pastors</h1>
+        <h1 className="text-3xl text-red-600 font-bold pt-8 text-center">Assistant Pastors</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center pb-5">

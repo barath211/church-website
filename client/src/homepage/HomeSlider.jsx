@@ -18,7 +18,7 @@ function HomeSlider() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide(prevSlide => (prevSlide + 1) % slides.length);
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);

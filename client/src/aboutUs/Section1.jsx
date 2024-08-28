@@ -1,14 +1,15 @@
 import React from 'react';
-import image from '../images/about church.jpeg';
+import image from '../images/about image.jpeg';
 
 const Section1 = () => {
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800">
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
         {/* image */}
-        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-          <img src={image} alt="" className="object-contain h-80 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
-        </div>
+        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 shadow-md sm:shadow-lg lg:shadow-xl">
+  <img src={image} alt="" className="object-contain h-80 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+</div>
+
         {/* content */}
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
           <h1 className="text-5xl font-bold leading-none sm:text-6xl">
