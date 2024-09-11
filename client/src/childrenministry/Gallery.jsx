@@ -76,7 +76,7 @@ const Gallery = () => {
         <div className="flex justify-center space-x-6">
           {/* Instagram Icon */}
           <a
-            href="https://www.instagram.com/yourpage" // Replace with your Instagram link
+            href="https://www.instagram.com/bethelkidsclub_official?igsh=MWoxaWRtY2RkNnRuaA==" // Replace with your Instagram link
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-600 hover:text-pink-800"
@@ -86,7 +86,7 @@ const Gallery = () => {
 
           {/* YouTube Icon */}
           <a
-            href="https://www.youtube.com/yourpage" // Replace with your YouTube link
+            href="https://www.youtube.com/@bethelkidsclub" // Replace with your YouTube link
             target="_blank"
             rel="noopener noreferrer"
             className="text-red-600 hover:text-red-800"
