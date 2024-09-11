@@ -92,7 +92,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center justify-center md:justify-start text-white">
                   <FaPhone className="w-4 h-4 mr-2 text-black " />
-                  <span className="text-[14px]">91+ 987654321</span>
+                  <span className="text-[14px]">91+ 9585893958</span>
                 </div>
               </div>
             </div>

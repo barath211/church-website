@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import bg3 from '../images/bg-about.jpg'
-import bg5 from '../images/BG-5.jpg'
+import bg3 from '../images/banner1church.jpg'
+import bg5 from '../images/churchbackimage.jpg'
 import bg2 from '../images/BG-2.jpg'
 import bg4 from '../images/imgpasma.jpg'
 
 const slides = [
   { src: bg3, alt: "Image One" },
-  { src: bg2, alt: "Image Two" },
-  { src: bg5, alt: "Image Three" },
+  { src: bg5, alt: "Image Two" },
+  { src: bg2, alt: "Image Three" },
   { src: bg4, alt: "Image Four" },
  
 ];

@@ -222,7 +222,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={'Childrenministry'}
-                        className='block px-4 py-2 text-orange-500 font-bold'
+                        className='block px-4 py-2 text-red-600 font-bold'
                         onClick={closeDropdown}
                       >
                         Children's
@@ -231,7 +231,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={'Youthministry'}
-                        className='block px-4 py-2 text-orange-500 font-bold'
+                        className='block px-4 py-2 text-red-600 font-bold'
                         onClick={closeDropdown}
                       >
                         Youth
@@ -240,7 +240,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={'Womenministry'}
-                        className='block px-4 py-2 text-orange-500 font-bold'
+                        className='block px-4 py-2 text-red-600 font-bold'
                         onClick={closeDropdown}
                       >
                         Women's
@@ -249,7 +249,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={'Worship'}
-                        className='block px-4 py-2 text-orange-500 font-bold'
+                        className='block px-4 py-2 text-red-600 font-bold'
                         onClick={closeDropdown}
                       >
                         Worship
@@ -258,7 +258,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to={'Socialservice'}
-                        className='block px-4 py-2 text-orange-500 font-bold'
+                        className='block px-4 py-2 text-red-600 font-bold'
                         onClick={closeDropdown}
                       >
                         Social Service

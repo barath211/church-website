@@ -5,7 +5,7 @@ const Section2 = () => {
 	<section className="dark:bg-gray-100 dark:text-gray-800 bg-gray-200">
 	<div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between ">
 		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-			<h1 className="text-5xl font-bold leading-none sm:text-6xl">events
+			<h1 className="text-5xl font-bold leading-none sm:text-6xl text-red-600">events
 			</h1>
 			<p className="mt-6 mb-8 text-lg sm:mb-12">
 			Join us for a range of enriching church events including special prayers for collective and personal needs,

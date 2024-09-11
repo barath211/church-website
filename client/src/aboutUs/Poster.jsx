@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutBg from '../images/bg-about.jpg';
+import aboutBg from '../images/BG-4.jpg';
 
 const Poster = () => {
   return (
