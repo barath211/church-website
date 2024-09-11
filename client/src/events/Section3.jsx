@@ -50,7 +50,7 @@ const Section3 = () => {
                         
                         <span>📅  2024</span>
                     </div>
-                    <div className="text-[12.5px] md:text-[13px] lg:text-[14px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id enim dignissimos minima quaerat beatae.</div>
+                    <div className="text-[12.5px] md:text-[13px] lg:text-[14px]">Lorem ipsum dolor sit ametcing elit. Mollitia, id enim dignissimos minima quaerat beatae.</div>
                   
                 </div>
                 <div className="flex snap-start flex-col gap-5 min-w-[250px] w-[280px] md:w-[300px] p-3 lg:hover:shadow-2xl duration-300 transition-all bg-white lg:hover:-translate-y-5">
