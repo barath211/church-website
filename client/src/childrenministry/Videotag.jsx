@@ -6,7 +6,7 @@ const Videotag = () => {
      {/* Left Side: Bible Verses */}
 <div className="w-full md:w-1/2 p-4">
   <h2 className="text-xl font-semibold  mb-2">Bible Verses</h2>
-  <p className="text-base md:text-2xl font-bold text-gray-600">
+  <p className="text-base md:text-2xl font-bold text-red-600 italic">
     “Jesus said, ‘Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these.’”
     — Matthew 19:14
   </p>
