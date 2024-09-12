@@ -225,7 +225,7 @@ const Navbar = () => {
                         className='block px-4 py-2 text-red-600 font-bold'
                         onClick={closeDropdown}
                       >
-                        Children's
+                        Childrens
                       </Link>
                     </li>
                     <li>
@@ -243,7 +243,7 @@ const Navbar = () => {
                         className='block px-4 py-2 text-red-600 font-bold'
                         onClick={closeDropdown}
                       >
-                        Women's
+                        Womens
                       </Link>
                     </li>
                     <li>
