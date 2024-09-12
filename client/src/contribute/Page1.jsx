@@ -28,7 +28,7 @@ const Page1 = () => {
             Church Contribution and Biblical Perspective
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Church contribution is a fundamental aspect of Christian stewardship and community involvement. It encompasses various forms of giving, including financial donations, volunteering time and talents, and offering support to those in need. In the Christian faith, contributing to the church is not merely a financial obligation but a spiritual act of worship and obedience to God's teachings. It reflects a commitment to the church's mission and the broader community it serves.
+            Church contribution is a fundamental aspect of Christian stewardship and community involvement. It encompasses various forms of giving, including financial donations volunteering time and talents, and offering support to those in need. In the Christian faith, contributing to the church is not merely a financial obligation but a spiritual act of worship and obedience to God's teachings. It reflects a commitment to the church's mission and the broader community it serves.
           </p>
 
           <p className="mt-4 text-lg text-gray-700 leading-relaxed">
