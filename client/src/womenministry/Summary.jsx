@@ -4,7 +4,7 @@ const Summary = () => {
   return (
     <div className='flex flex-col p-4 '>
       <div>
-        <h1 className='text-center font-bold text-2xl md:text-3xl'>WOMEN'S MINISTRY</h1>
+        <h1 className='text-center font-bold text-2xl md:text-3xl'>WOMENS MINISTRY</h1>
       </div>
       <div className='p-4'>
         <h1 className=' font-semibold italic text-gray-600'>
