@@ -47,7 +47,7 @@ const Page1 = () => {
               id="account-holder-name"
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 flex-grow"
-              value="John Doe"
+              value="Bethel Icrm"
               disabled
               readOnly
             />
@@ -97,7 +97,7 @@ const Page1 = () => {
               id="ifsc-code"
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 flex-grow"
-              value="IFSC1234567"
+              value="IFSC*****"
               disabled
               readOnly
             />
@@ -171,12 +171,12 @@ const Page1 = () => {
 
           {/* Gpay Number Section */}
           <div className="flex items-center mb-4">
-            <label htmlFor="gpay-number" className="text-gray-700 dark:text-gray-300 mr-4">Gpay Number:</label>
+            <label htmlFor="gpay-number" className="text-gray-700 dark:text-gray-300 mr-4">UPI ID:</label>
             <input
               id="gpay-number"
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 flex-grow"
-              value="9876543210"
+              value="daniel.3958@waicici"
               disabled
               readOnly
             />
